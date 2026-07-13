@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Eye Developer — AI-Driven Design &amp; Full-Stack Development</title>
+<meta name="description" content="Global Eye Developer builds AI graphic design, AI web development, full-stack products and UI/UX experiences. Based in Lahore, Pakistan — reachable instantly on WhatsApp.">
+<meta name="theme-color" content="#0a0416">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><ellipse cx=%2250%22 cy=%2250%22 rx=%2246%22 ry=%2226%22 fill=%22none%22 stroke=%22%2300eaff%22 stroke-width=%226%22/><circle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22%2300eaff%22/></svg>">
+</head>
+<body>
+
+<!-- Ambient neon circuit-line background (behind everything) -->
+<div class="bg-layer" aria-hidden="true">
+  <svg class="bg-lines" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00eaff" stop-opacity="0.9"/>
+        <stop offset="55%" stop-color="#5b6bff" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#00eaff" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="lineGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#8a5bff" stop-opacity="0.8"/>
+        <stop offset="60%" stop-color="#00eaff" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#8a5bff" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path class="flow-line" d="M -100 150 C 300 50, 500 350, 900 180 S 1500 60, 1750 220" stroke="url(#lineGrad)" stroke-width="2.4" fill="none"/>
+    <path class="flow-line delay-1" d="M -100 500 C 250 650, 650 300, 1000 520 S 1400 800, 1750 560" stroke="url(#lineGrad2)" stroke-width="1.6" fill="none"/>
+    <path class="flow-line delay-2" d="M -100 900 C 400 780, 600 1050, 1050 880 S 1450 700, 1750 950" stroke="url(#lineGrad)" stroke-width="1.2" fill="none"/>
+    <path class="flow-line delay-3" d="M 100 -50 C 200 300, -50 600, 250 900 S 150 1250, 400 1300" stroke="url(#lineGrad2)" stroke-width="1.8" fill="none"/>
+    <path class="flow-line delay-4" d="M 1600 100 C 1400 400, 1650 650, 1350 950 S 1500 1250, 1300 1300" stroke="url(#lineGrad)" stroke-width="1.4" fill="none"/>
+  </svg>
+</div>
+
+<!-- Particle + starlight click-burst canvas (transparent, full-viewport, fixed) -->
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 100 60" width="34" height="20">
+          <ellipse cx="50" cy="30" rx="46" ry="22" fill="none" stroke="var(--cyan)" stroke-width="5"/>
+          <circle cx="50" cy="30" r="11" fill="var(--cyan)"/>
+        </svg>
+      </span>
+      <span class="brand-text">GLOBAL EYE<span class="brand-sub">DEVELOPER</span></span>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="https://wa.me/923376184616?text=Hi%20Global%20Eye%20Developer%2C%20I%20want%20to%20hire%20your%20services" target="_blank" rel="noopener" class="nav-cta magnetic">Hire on WhatsApp</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">// SIGNAL_ACQUIRED — LAHORE, PAKISTAN</p>
+
+      <h1 class="hero-title">
+        <span class="line">GLOBAL EYE</span>
+        <span class="line glow-strong">DEVELOPER</span>
+      </h1>
+
+      <p class="hero-sub">
+        We watch every pixel, every line of code, every pixel of your product's future.
+        AI-assisted design and full-stack engineering, built to a standard that gets you hired &mdash; fast.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="https://wa.me/923376184616?text=Hi%20Global%20Eye%20Developer%2C%20I%20want%20to%20hire%20your%20services" target="_blank" rel="noopener" class="btn btn-primary magnetic" data-burst>
+          <span>Start on WhatsApp</span>
+        </a>
+        <a href="tel:+923376184616" class="btn btn-ghost magnetic" data-burst>
+          <span>Call 0337 618 4616</span>
+        </a>
+      </div>
+
+      <div class="hero-video-frame">
+        <div class="hero-video-scan" aria-hidden="true"></div>
+        <video class="hero-video" autoplay muted loop playsinline poster="img/transmission-poster.svg">
+          <source src="video/transmission.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-glitch-fallback" aria-hidden="true">
+          <span>TRANSMISSION_LIVE</span>
+        </div>
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+      </div>
+    </div>
+
+    <svg class="hero-eye" viewBox="0 0 400 220" aria-hidden="true">
+      <path class="eye-outline" d="M20 110 C 90 10, 310 10, 380 110 C 310 210, 90 210, 20 110 Z" fill="none" stroke="var(--cyan)" stroke-width="2"/>
+      <circle class="eye-iris" cx="200" cy="110" r="38" fill="none" stroke="var(--blue-accent)" stroke-width="2"/>
+      <circle class="eye-pupil" cx="200" cy="110" r="14" fill="var(--cyan)"/>
+    </svg>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <p class="eyebrow center">// CAPABILITIES</p>
+    <h2 class="section-title center">What We Build</h2>
+
+    <div class="cards-grid">
+      <article class="service-card magnetic" tabindex="0" data-burst>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><path d="M8 38 L18 14 L28 30 L34 18 L40 38 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="16" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>AI Graphic Design</h3>
+        <p>Brand identities, social creatives and visual systems generated and refined with AI, then hand-finished for pixel-perfect polish.</p>
+      </article>
+
+      <article class="service-card magnetic" tabindex="0" data-burst>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M18 40 h12 M24 34 v6" stroke="currentColor" stroke-width="2.2"/><path d="M14 22 l-4 3 4 3 M34 22 l4 3 -4 3 M22 28 l4-10" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+        <h3>AI Web Development</h3>
+        <p>Modern, blazing-fast websites built with AI-accelerated workflows &mdash; without sacrificing hand-crafted UX or SEO fundamentals.</p>
+      </article>
+
+      <article class="service-card magnetic" tabindex="0" data-burst>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="4" fill="currentColor"/><circle cx="10" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="38" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="36" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="38" cy="36" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 24 L10 12 M24 24 L38 12 M24 24 L10 36 M24 24 L38 36" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>AI Full-Stack Development</h3>
+        <p>End-to-end products: databases, APIs, auth and deployment pipelines &mdash; architected for scale from day one.</p>
+      </article>
+
+      <article class="service-card magnetic" tabindex="0" data-burst>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M14 16 h20 M14 24 h20 M14 32 h12" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>UI/UX Designing</h3>
+        <p>Research-backed interfaces that feel inevitable &mdash; wireframes to high-fidelity prototypes your users will navigate instinctively.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="reviews" id="reviews">
+    <p class="eyebrow center">// CLIENT LOGS</p>
+    <h2 class="section-title center">Trusted By Founders &amp; Teams</h2>
+
+    <div class="reviews-track" id="reviews-track">
+      <article class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>&ldquo;Global Eye Developer rebuilt our entire product UI in two weeks. The attention to detail on animations and load speed was next level.&rdquo;</p>
+        <div class="reviewer"><span class="reviewer-name">Ayesha K.</span><span class="reviewer-role">Founder, RetailPulse</span></div>
+      </article>
+      <article class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>&ldquo;Communication over WhatsApp was instant and the full-stack build shipped ahead of schedule. Genuinely premium execution.&rdquo;</p>
+        <div class="reviewer"><span class="reviewer-name">Daniyal R.</span><span class="reviewer-role">CTO, Fintra</span></div>
+      </article>
+      <article class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>&ldquo;The AI-assisted branding work saved us weeks. Every asset felt custom, not templated.&rdquo;</p>
+        <div class="reviewer"><span class="reviewer-name">Sara M.</span><span class="reviewer-role">Marketing Lead, Nuvex</span></div>
+      </article>
+      <article class="review-card">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>&ldquo;Best developer we've hired on short notice. The UI/UX overhaul directly improved our conversion rate.&rdquo;</p>
+        <div class="reviewer"><span class="reviewer-name">Hassan T.</span><span class="reviewer-role">Product Manager, Loopstack</span></div>
+      </article>
+    </div>
+
+    <div class="reviews-dots" id="reviews-dots" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ CONTACT + FOOTER ============ -->
+  <section class="contact" id="contact">
+    <p class="eyebrow center">// ESTABLISH CONTACT</p>
+    <h2 class="section-title center">Let's Build Something Premium</h2>
+
+    <div class="contact-grid">
+
+      <!-- Left: Map + address -->
+      <div class="contact-left">
+        <div class="map-frame">
+          <iframe
+            title="Global Eye Developer location"
+            src="https://www.google.com/maps?q=251-C%20Block%2C%20PIA%20Society%2C%20Lahore%2C%20Pakistan&amp;output=embed"
+            width="100%" height="100%" style="border:0;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="address-block">
+          <h3>Studio Address</h3>
+          <p>251-C Block, PIA Society, Lahore, Pakistan</p>
+        </div>
+      </div>
+
+      <!-- Right: form + direct details -->
+      <div class="contact-right">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="field">
+            <label for="contact-info">Email or Phone</label>
+            <input type="text" id="contact-info" name="contact" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" name="service">
+              <option>AI Graphic Design</option>
+              <option>AI Web Development</option>
+              <option>AI Full-Stack Development</option>
+              <option>UI/UX Designing</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us what you're building..." required></textarea>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary btn-block magnetic" data-burst>
+            <span>Send via WhatsApp</span>
+          </button>
+        </form>
+
+        <div class="direct-details">
+          <div class="detail-row">
+            <span class="detail-label">Name</span>
+            <span class="detail-value">Ghulam Murtaza</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Phone</span>
+            <a class="detail-value link" href="tel:+923376184616">0337 618 4616</a>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">WhatsApp</span>
+            <a class="detail-value link" href="https://wa.me/923376184616?text=Hi%20Global%20Eye%20Developer%2C%20I%20want%20to%20hire%20your%20services" target="_blank" rel="noopener">Message directly</a>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">GitHub</span>
+            <a class="detail-value link" href="https://github.com/ghulammurtaza994" target="_blank" rel="noopener">ghulammurtaza994</a>
+          </div>
+
+          <a href="https://www.linkedin.com/in/ghulammurtaza-azhar-348a8a415" target="_blank" rel="noopener" class="linkedin-btn magnetic" data-burst>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.68H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            <span>Connect on LinkedIn</span>
+          </a>
+          <a href="https://github.com/ghulammurtaza994/Global-eye-developer" target="_blank" rel="noopener" class="linkedin-btn magnetic" data-burst>
+            <span>View GitHub Repo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-text small">GLOBAL EYE<span class="brand-sub">DEVELOPER</span></span>
+        <p>AI-driven design &amp; full-stack development, from Lahore to the world.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ghulammurtaza-azhar-348a8a415" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/ghulammurtaza994" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+        <a href="https://wa.me/923376184616?text=Hi%20Global%20Eye%20Developer%2C%20I%20want%20to%20hire%20your%20services" target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
+        <a href="tel:+923376184616" aria-label="Call">tel</a>
+      </div>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Global Eye Developer. All rights reserved.</p>
+  </footer>
+
+</main>
+
+<!-- Floating persistent WhatsApp action -->
+<a href="https://wa.me/923376184616?text=Hi%20Global%20Eye%20Developer%2C%20I%20want%20to%20hire%20your%20services" target="_blank" rel="noopener" class="floating-wa magnetic" data-burst aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.8c1.7.9 3.6 1.4 5.6 1.4h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.6 1.1 1.2-4.5-.2-.4C6 17.9 5.5 16.5 5.5 15c0-5.8 4.7-10.5 10.5-10.5S26.5 9.2 26.5 15 21.8 25 16 25zm5.7-7.9c-.3-.2-1.9-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-.9-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.4.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script src="js/particles-bg.js" defer></script>
+<script src="js/starlight.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

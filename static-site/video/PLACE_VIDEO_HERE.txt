@@ -1,0 +1,12 @@
+Drop your looping hero video here as:  transmission.mp4
+
+Recommended specs for fast loading + premium feel:
+- Resolution: 1280x720 (or 1920x1080 if bandwidth isn't a concern)
+- Duration: 6-15 seconds, seamless loop
+- Format: H.264 MP4, no audio track (muted autoplay requires no audio)
+- File size: under 3-4 MB for fast first paint
+
+Until this file is added, the hero section gracefully falls back to the
+animated "TRANSMISSION_LIVE" placeholder defined in style.css
+(.hero-video-glitch-fallback) and the poster SVG at
+static/img/transmission-poster.svg.
