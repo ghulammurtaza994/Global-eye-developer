@@ -25,8 +25,8 @@
     );
   }
 
-  /* ---------- Service card cursor-glow tracking ---------- */
-  document.querySelectorAll(".service-card").forEach((card) => {
+  /* ---------- Card cursor-glow tracking ---------- */
+  document.querySelectorAll(".service-card, .project-card").forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
       card.style.setProperty("--mx", `${e.clientX - rect.left}px`);
