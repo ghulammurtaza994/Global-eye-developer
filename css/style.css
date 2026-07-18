@@ -279,109 +279,6 @@ section {
 }
 
 /* =========================================================================
-   Side Drawer Navigation
-   ========================================================================= */
-
-.side-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: min(320px, 85vw);
-  height: 100vh;
-  background: var(--bg-secondary);
-  border-left: 1px solid var(--border);
-  z-index: 200;
-  transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-y: auto;
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
-}
-
-.side-drawer.open {
-  transform: translateX(0);
-}
-
-.drawer-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px;
-  border-bottom: 1px solid var(--border);
-}
-
-.drawer-brand {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--white);
-}
-
-.drawer-close {
-  background: none;
-  border: none;
-  color: var(--gray-400);
-  cursor: pointer;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s ease;
-}
-.drawer-close:hover { color: var(--white); }
-
-.drawer-nav {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-}
-
-.drawer-link {
-  display: block;
-  padding: 12px 16px;
-  color: var(--gray-300);
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
-}
-.drawer-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--white);
-}
-
-.drawer-cta {
-  margin: 24px;
-  padding: 14px 24px;
-  background: var(--tech-blue);
-  color: var(--white);
-  border-radius: var(--radius-sm);
-  text-align: center;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-.drawer-cta:hover {
-  background: var(--tech-blue-dark);
-}
-
-/* Drawer overlay */
-.drawer-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  z-index: 150;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.drawer-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* =========================================================================
    Hero
    ========================================================================= */
 
@@ -1036,9 +933,32 @@ section {
 @media (max-width: 760px) {
   section { padding: 72px 20px; }
 
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    display: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
 
   .hero { padding-top: 100px; padding-bottom: 100px; }
   .hero-title { font-size: clamp(2rem, 8vw, 3rem); }

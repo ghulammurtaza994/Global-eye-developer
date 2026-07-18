@@ -9,40 +9,35 @@
   document.getElementById("year") &&
     (document.getElementById("year").textContent = new Date().getFullYear());
 
-  /* ---------- Side Drawer Navigation ---------- */
+  /* ---------- Mobile Navigation ---------- */
   const toggle = document.getElementById("nav-toggle");
-  const drawer = document.getElementById("side-drawer");
-  const overlay = document.getElementById("drawer-overlay");
-  const closeBtn = document.getElementById("drawer-close");
+  const navLinks = document.getElementById("nav-links");
 
-  if (toggle && drawer && overlay) {
-    const openDrawer = () => {
-      drawer.classList.add("open");
-      overlay.classList.add("active");
+  if (toggle && navLinks) {
+    const openMenu = () => {
+      navLinks.classList.add("open");
       toggle.setAttribute("aria-expanded", "true");
-      document.body.style.overflow = "hidden";
     };
 
-    const closeDrawer = () => {
-      drawer.classList.remove("open");
-      overlay.classList.remove("active");
+    const closeMenu = () => {
+      navLinks.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
-      document.body.style.overflow = "";
     };
 
-    toggle.addEventListener("click", openDrawer);
-    closeBtn.addEventListener("click", closeDrawer);
-    overlay.addEventListener("click", closeDrawer);
+    toggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.contains("open");
+      isOpen ? closeMenu() : openMenu();
+    });
 
-    // Close drawer when clicking nav links
-    drawer.querySelectorAll(".drawer-link").forEach((link) => {
-      link.addEventListener("click", closeDrawer);
+    // Close menu when clicking nav links
+    navLinks.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
     });
 
     // Close on Escape key
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && drawer.classList.contains("open")) {
-        closeDrawer();
+      if (e.key === "Escape" && navLinks.classList.contains("open")) {
+        closeMenu();
         toggle.focus();
       }
     });
