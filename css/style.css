@@ -286,7 +286,7 @@ section {
   padding-bottom: 120px;
   text-align: center;
   overflow: hidden;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .hero-inner {
@@ -828,7 +828,7 @@ section {
   border-top: 1px solid var(--border);
   padding: 48px 32px 24px;
   margin-top: 80px;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .footer-inner {
