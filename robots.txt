@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /video/
+Disallow: /img/
 
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://global-eye-developer.netlify.app/sitemap.xml
+
+# Allow specific important files
+Allow: /*.html$
+Allow: /*.xml$
