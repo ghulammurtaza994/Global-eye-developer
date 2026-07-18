@@ -826,6 +826,27 @@ section {
    Responsive
    ========================================================================= */
 
+/* Mobile menu overlay */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 45;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
+}
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Body scroll lock when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
 @media (max-width: 980px) {
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: 1fr; }
@@ -836,7 +857,7 @@ section {
 }
 
 @media (max-width: 760px) {
-  section { padding: 88px 22px; }
+  section { padding: 72px 20px; }
 
   .projects-intro {
     font-size: 0.92rem;
@@ -848,7 +869,7 @@ section {
     top: 68px; right: 0;
     height: calc(100vh - 68px);
     width: min(78vw, 320px);
-    background: rgba(9, 4, 20, 0.96);
+    background: rgba(9, 4, 20, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: flex-start;
@@ -857,6 +878,7 @@ section {
     transform: translateX(100%);
     transition: transform 0.4s var(--ease);
     border-left: 1px solid rgba(0, 234, 255, 0.15);
+    z-index: 48;
   }
   .nav-links.open { transform: translateX(0); }
   .nav-toggle { display: flex; }
@@ -864,12 +886,221 @@ section {
 
   .hero-eye { display: none; }
 
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .hero-cta-row {
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+
+  .hero-video-frame {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+  }
+
   .cards-grid { grid-template-columns: 1fr; }
-  .reviews-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 8px; }
-  .review-card { min-width: 82%; scroll-snap-align: start; }
+  
+  .reviews-track { 
+    display: flex; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    gap: 16px; 
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .review-card { 
+    min-width: 85%; 
+    scroll-snap-align: start;
+  }
   .reviews-dots { display: flex; }
 
-  .floating-wa { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .direct-details {
+    padding: 24px 20px;
+  }
+
+  .floating-wa { 
+    bottom: 16px; 
+    right: 16px; 
+    width: 50px; 
+    height: 50px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  section { 
+    padding: 60px 16px; 
+  }
+
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 80px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 9vw, 2.8rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-sub {
+    font-size: 0.88rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 0.88rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 10px;
+  }
+
+  .service-card {
+    padding: 28px 22px;
+  }
+
+  .project-card {
+    padding: 24px 20px;
+  }
+
+  .project-header {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .project-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .project-meta h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.88rem;
+  }
+
+  .detail-group h4 {
+    font-size: 0.72rem;
+  }
+
+  .detail-group ul {
+    font-size: 0.82rem;
+  }
+
+  .tag {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+  }
+
+  .review-card {
+    padding: 22px 18px;
+    min-width: 88%;
+  }
+
+  .contact-form {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  .direct-details {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding-bottom: 10px;
+  }
+
+  .detail-label {
+    font-size: 0.7rem;
+  }
+
+  .detail-value {
+    font-size: 0.88rem;
+  }
+
+  .linkedin-btn {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+
+  .footer {
+    padding: 40px 20px 20px;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+  }
+
+  .floating-wa {
+    bottom: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .map-frame {
+    min-height: 240px;
+  }
 }
 
 /* Reduced motion ----------------------------------------------------------- */
