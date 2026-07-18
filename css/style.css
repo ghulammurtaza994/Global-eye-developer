@@ -709,7 +709,24 @@ section {
   background: rgba(0, 234, 255, 0.05);
   outline: none;
 }
-.field select { color-scheme: dark; }
+.field select { 
+  color-scheme: dark; 
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.field select option {
+  background: #150a2b;
+  color: var(--white);
+}
+
+.field select option:checked {
+  background: rgba(0, 234, 255, 0.15);
+  color: var(--cyan);
+}
+
+.field select:focus option {
+  background: #150a2b;
+}
 
 .form-status { font-size: 0.82rem; min-height: 1.1em; color: var(--muted); }
 .form-status.error { color: var(--danger); }
