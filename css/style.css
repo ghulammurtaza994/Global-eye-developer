@@ -865,22 +865,28 @@ body.menu-open {
   }
 
   .nav-links {
-    position: fixed;
-    top: 68px; right: 0;
-    height: calc(100vh - 68px);
-    width: min(78vw, 320px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: rgba(9, 4, 20, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 28px;
-    gap: 26px;
-    transform: translateX(100%);
-    transition: transform 0.4s var(--ease);
-    border-left: 1px solid rgba(0, 234, 255, 0.15);
+    align-items: center;
+    padding: 30px 20px;
+    gap: 20px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s var(--ease), opacity 0.3s var(--ease), padding 0.4s var(--ease);
+    border-bottom: 1px solid rgba(0, 234, 255, 0.15);
     z-index: 48;
   }
-  .nav-links.open { transform: translateX(0); }
+  .nav-links.open {
+    max-height: 500px;
+    opacity: 1;
+    padding: 30px 20px;
+  }
   .nav-toggle { display: flex; }
   .nav-cta { width: 100%; text-align: center; }
 

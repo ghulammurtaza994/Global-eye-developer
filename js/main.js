@@ -12,27 +12,20 @@
   /* ---------- Mobile nav toggle ---------- */
   const toggle = document.getElementById("nav-toggle");
   const links = document.getElementById("nav-links");
-  const overlay = document.getElementById("nav-overlay");
   if (toggle && links) {
     const openMenu = () => {
       links.classList.add("open");
-      overlay.classList.add("active");
       toggle.setAttribute("aria-expanded", "true");
-      document.body.classList.add("menu-open");
     };
     const closeMenu = () => {
       links.classList.remove("open");
-      overlay.classList.remove("active");
       toggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
     };
 
     toggle.addEventListener("click", () => {
       const isOpen = links.classList.contains("open");
       isOpen ? closeMenu() : openMenu();
     });
-
-    overlay.addEventListener("click", closeMenu);
 
     links.querySelectorAll("a").forEach((a) =>
       a.addEventListener("click", () => {
