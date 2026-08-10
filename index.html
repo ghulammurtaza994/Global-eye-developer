@@ -94,9 +94,22 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<!-- Google AdSense: replace the placeholder IDs below with your actual values -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><ellipse cx=%2250%22 cy=%2250%22 rx=%2246%22 ry=%2226%22 fill=%22none%22 stroke=%22%2300eaff%22 stroke-width=%226%22/><circle cx=%2250%22 cy=%2250%22 r=%2214%22 fill=%22%2300eaff%22/></svg>">
 </head>
 <body>
+
+<div class="coming-soon-overlay" id="comingSoonOverlay" aria-hidden="true">
+  <div class="coming-soon-modal" role="dialog" aria-modal="true" aria-labelledby="coming-soon-title" aria-describedby="coming-soon-copy">
+    <button class="cs-close" id="comingSoonCloseBtn" aria-label="Close coming soon notification">×</button>
+    <span class="cs-label">Coming Soon</span>
+    <h2 id="coming-soon-title">AI Chatbot & AI Call Agent</h2>
+    <p id="coming-soon-copy">We're working on powerful AI solutions to make communication smarter, faster, and easier. Stay tuned!</p>
+    <p class="cs-support">Premium AI services launching soon with a polished Global Eye Developer experience.</p>
+  </div>
+</div>
 
 <!-- ============ NAVBAR ============ -->
 <header class="navbar" id="navbar">
@@ -209,6 +222,14 @@
         </div>
         <h3>UI/UX Designing</h3>
         <p>Research-backed interfaces that feel inevitable &mdash; wireframes to high-fidelity prototypes your users will navigate instinctively.</p>
+      </article>
+
+      <article class="service-card magnetic" tabindex="0" data-burst>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48" role="img" aria-label="Google Ads icon"><rect x="8" y="14" width="32" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 20 h16 M16 26 h10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="24" r="3" fill="currentColor"/></svg>
+        </div>
+        <h3>Google Ads</h3>
+        <p>Reach the right audience with targeted Google advertising campaigns.</p>
       </article>
     </div>
   </section>
